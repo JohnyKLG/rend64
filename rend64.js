@@ -1,5 +1,4 @@
-window.onload = function(){
-    bd = document.body;
+window.onload = function(){bd = document.body;
     var dstl = "position:fixed;top:9px;width:250px;height:250px;border:1px solid #000;";
     var din = document.createElement('div');din.style = dstl+'left:9px;';
     din.id = 'din';bd.appendChild(din);
