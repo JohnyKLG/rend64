@@ -23,9 +23,11 @@ window.onload = function(){
     bd.appendChild(cfle);
     var wstl = "position:fixed;top:270px;left:147px;width:60px;";
     var cwdt = document.createElement('input');cwdt.style = wstl;
+    cwdt.setAttribute('onchange','newHgt(this.value)');
     cwdt.type = 'number';cwdt.id = 'cwdt';bd.appendChild(cwdt);
     var hstl = "position:fixed;top:270px;left:260px;width:60px;";
     var chgt = document.createElement('input');chgt.style = hstl;
+    chgt.setAttribute('onchange','newWdt(this.value)');
     chgt.type = 'number';chgt.id = 'chgt';bd.appendChild(chgt);
     var swstl = "position:fixed;top:272px;left:135px;font:15px sans-serif;";
     var swdt = document.createElement('span');swdt.innerText = 'L';
@@ -58,7 +60,6 @@ function png64(){
     var st64x = canvas64(document.getElementById('iin'));
     var st64 = st64x.replace('data:image/png;base64,', '');
     var dist = 76;
-    var resultado = new Array(parseInt(st64.length / dist));
     for(var x = 0; x < st64.length / dist; x++){
         document.getElementById('ctxt').value+= "vOut '"+st64.substring(0 + x * dist, (x + 1) * dist)+"';\n";
     }
@@ -70,12 +71,28 @@ function png64(){
     cbtn.innerText = 'Novo arquivo';cbtn.id = 'btn';
     cbtn.setAttribute('onclick','location.reload()');bd.appendChild(cbtn);
 }
+function newWdt(hnew){
+    var wdt = document.getElementById("cwdt");
+    var wold = localStorage.getItem('wdt');
+    var hold = localStorage.getItem('hgt');
+    var prc = hnew / hold;
+    wdt.value = parseInt(wold * prc);
+}
+function newHgt(wnew){
+    var hgt = document.getElementById("chgt");
+    var wold = localStorage.getItem('wdt');
+    var hold = localStorage.getItem('hgt');
+    var prc = wnew / wold;
+    hgt.value = parseInt(hold * prc);
+}
 var imgIn = function(event){
     var iin = document.getElementById('iin');
     iin.src = URL.createObjectURL(event.target.files[0]);
     iin.onload = function(){
         document.getElementById('cwdt').value = iin.width;
         document.getElementById('chgt').value = iin.height;
+        localStorage.setItem('wdt', iin.width);
+        localStorage.setItem('hgt', iin.height);
         document.getElementById('fle').remove();
         var bstl = "position:fixed;top:270px;left:9px;";
         var cbtn = document.createElement('button');cbtn.style = bstl;
