@@ -1,3 +1,8 @@
+/* --------------------- Johny KLG ---------------------+
+| Script renderizador de imagem para DataURL em base64. |
+|                                                       |
+| johnyklg@outlook.com           Brasil, agosto de 2020 |
++----------------------------------------------------- */
 window.onload = function(){
     bd = document.body;bd.style = 'background:#ccc;color:#666;'
     var dstl = "position:fixed;top:9px;width:250px;height:250px;background:#666;border:1px solid #000;";
