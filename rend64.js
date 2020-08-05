@@ -66,6 +66,8 @@ function png64(){
     var iout = document.getElementById('iout');
     iout.src = st64x;
     document.getElementById('btn').remove();
+    localStorage.removeItem('wdt');
+    localStorage.removeItem('hgt');
     var bstl = "position:fixed;top:270px;left:9px;";
     var cbtn = document.createElement('button');cbtn.style = bstl;
     cbtn.innerText = 'Novo arquivo';cbtn.id = 'btn';
