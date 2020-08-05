@@ -25,7 +25,6 @@ window.onload = function(){
     var tstl = "position:fixed;top:360px;left:9px;width:636px;height:200px;";
     var ctxt = document.createElement('textarea');ctxt.style = tstl;
     ctxt.id = 'ctxt';
-    //cfle.setAttribute('onclick','imgIn(event)');
     bd.appendChild(ctxt);
 }
 function canvas64(img){
