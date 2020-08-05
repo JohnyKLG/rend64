@@ -50,14 +50,15 @@ function canvas64(img){
     return dataURL;
 }
 function png64(){
-    var texto = canvas64(document.getElementById('iin'));
+    var st64x = canvas64(document.getElementById('iin'));
+    var st64 = st64x.replace('data:image/png;base64,', '');
     var dist = 76;
-    var resultado = new Array(parseInt(texto.length / dist));
-    for(var x = 0; x < texto.length / dist; x++){
-        document.getElementById('ctxt').value+= "vOut '"+texto.substring(0 + x * dist, (x + 1) * dist)+"';\n";
+    var resultado = new Array(parseInt(st64.length / dist));
+    for(var x = 0; x < st64.length / dist; x++){
+        document.getElementById('ctxt').value+= "vOut '"+st64.substring(0 + x * dist, (x + 1) * dist)+"';\n";
     }
     var iout = document.getElementById('iout');
-    iout.src = texto;
+    iout.src = st64x;
     document.getElementById('btn').remove();
     var bstl = "position:fixed;top:270px;left:9px;";
     var cbtn = document.createElement('button');cbtn.style = bstl;
