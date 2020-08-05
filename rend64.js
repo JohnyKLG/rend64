@@ -1,17 +1,17 @@
 window.onload = HTMLgen;
 function HTMLgen(){
     bd = document.body;
-    var cin = document.createElement('img');//cin.style = istl;
+    var cin = document.createElement('img');
     cin.id = 'iin';bd.appendChild(cin);
-    var cout = document.createElement('img');//cout.style = ostl;
+    var cout = document.createElement('img');
     cout.id = 'iout';bd.appendChild(cout);
-    var cfle = document.createElement('input');//cfle.style = fstl;
+    var cfle = document.createElement('input');
     cfle.type = 'file';cfle.accept = 'image/*';cfle.id = 'fle';
     cfle.setAttribute('onchange','imgIn(event)');
     bd.appendChild(cfle);
-    var cwdt = document.createElement('input');//cwdt.style = wstl;
+    var cwdt = document.createElement('input');
     cwdt.type = 'number';cwdt.id = 'cwdt';bd.appendChild(cwdt);
-    var chgt = document.createElement('input');//chgt.style = hstl;
+    var chgt = document.createElement('input');
     chgt.type = 'number';chgt.id = 'chgt';bd.appendChild(chgt);
 }
 function canvas64(img){
