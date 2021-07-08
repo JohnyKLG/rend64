@@ -43,6 +43,9 @@ window.onload = function(){
     shgt.style = shstl;bd.appendChild(shgt);
     var tstl = "position:fixed;top:300px;left:9px;width:636px;height:200px;resize: none;";
     var ctxt = document.createElement('textarea');ctxt.style = tstl;
+    ctxt.id = 'cout';bd.appendChild(ctxt);
+    var tst2 = "position:fixed;top:600px;left:9px;width:636px;height:200px;resize: none;";
+    var ctxt = document.createElement('textarea');ctxt.style = tst2;
     ctxt.id = 'ctxt';bd.appendChild(ctxt);
 }
 function canvas64(img){
@@ -61,8 +64,9 @@ function png64(){
     var st64 = st64x.replace('data:image/png;base64,', '');
     var dist = 76;
     for(var x = 0; x < st64.length / dist; x++){
-        document.getElementById('ctxt').value+= "vOut '"+st64.substring(0 + x * dist, (x + 1) * dist)+"';\n";
+        document.getElementById('cout').value+= "vOut '"+st64.substring(0 + x * dist, (x + 1) * dist)+"';\n";
     }
+    document.getElementById('ctxt').value = st64;
     var iout = document.getElementById('iout');
     iout.src = st64x;
     document.getElementById('btn').remove();
