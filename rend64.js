@@ -44,7 +44,7 @@ window.onload = function(){
     var tstl = "position:fixed;top:300px;left:9px;width:636px;height:200px;resize: none;";
     var ctxt = document.createElement('textarea');ctxt.style = tstl;
     ctxt.id = 'cout';bd.appendChild(ctxt);
-    var tst2 = "position:fixed;top:600px;left:9px;width:636px;height:200px;resize: none;";
+    var tst2 = "position:fixed;top:515px;left:9px;width:636px;height:200px;resize: none;";
     var ctxt = document.createElement('textarea');ctxt.style = tst2;
     ctxt.id = 'ctxt';bd.appendChild(ctxt);
 }
